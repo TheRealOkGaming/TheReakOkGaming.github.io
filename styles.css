@@ -4,7 +4,7 @@ body, h1, h2, p, ul, li {
 }
 /* Define styles for the header */
 header {
-    color: #fff;
+    color: black;
     padding: 10px 0;
     background-color: black;
 }
