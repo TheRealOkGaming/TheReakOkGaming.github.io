@@ -1,6 +1,7 @@
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
+    background-image: url('therealokluxury.jpg');
 }
 /* Define styles for the header */
 header {
