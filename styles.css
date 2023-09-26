@@ -13,6 +13,9 @@ h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
+img {
+    max-width: 80%;
+}
 /* Define styles for the header */
 header {
     color: black;
