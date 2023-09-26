@@ -4,11 +4,10 @@ body {
     background-color: gray;    
 }
 .about-content {
-    float:left;
-    width: 160px;
+    margin: 0 auto;
+    max-width: 600px;
     position: relative;
-    padding-right: 15px;
-    padding-left: 15px
+    padding: 20px;
 }
 h1, h2, p, ul, li {
     margin: 0;
