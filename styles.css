@@ -5,7 +5,7 @@ body {
 }
 .about-content {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 60%;
     position: relative;
     padding: 20px;
 }
@@ -53,6 +53,7 @@ nav ul li a {
 .about, .services, .contact {
     text-align: center;
     padding: 50px 0;
+    font-size: 20px;
 }
 
 /* Define styles for buttons */
