@@ -1,44 +1,44 @@
-body {
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: gray;    
-}
-.about-content {
-    margin: 0 auto;
-    max-width: 60%;
-    position: relative;
-    padding: 20px;
-}
-h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-img {
-    max-width: 80%;
-}
-/* Define styles for the header */
-header {
-    color: black;
-    padding: 10px 0;
-    text-align: center;
-    background-color: black;
+    box-sizing: border-box;
 }
 
-nav ul {
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header nav ul {
     list-style-type: none;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
-nav ul li a {
+header nav ul li a {
     text-decoration: none;
     color: #fff;
 }
 
-/* Define styles for the hero section */
+/* Hero section styles */
 .hero {
     background-image: url('therealokluxury.jpg');
     background-size: cover;
@@ -52,14 +52,63 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-/* Define styles for other sections */
-.about, .services, .contact {
+/* About section styles */
+.about {
+    background-color: #fff;
     text-align: center;
     padding: 50px 0;
-    font-size: 20px;
 }
 
-/* Define styles for buttons */
+.about h2 {
+    margin-bottom: 20px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+/* Services section styles */
+.services {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.services h2 {
+    margin-bottom: 20px;
+}
+
+.services ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.services ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact section styles */
+.contact {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
+
+/* Button styles */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -74,10 +123,10 @@ nav ul li a {
     background-color: #555;
 }
 
-/* Define styles for the footer */
+/* Footer styles */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
