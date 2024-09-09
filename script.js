@@ -1,27 +1,25 @@
-const chatInput = 
-    document.querySelector('.chat-input textarea');
-const sendChatBtn = 
-    document.querySelector('.chat-input button');
+const chatInput = document.querySelector('.chat-input textarea');
+const sendChatBtn = document.querySelector('.chat-input button');
 const chatbox = document.querySelector(".chatbox");
- 
+
 let userMessage;
+let messageHistory = []; // Array to store the chat history
 const API_KEY = config.MY_KEY;
- 
-//OpenAI Free APIKey
- 
+
+// Function to create chat message elements
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className);
-    let chatContent = 
-        className === "chat-outgoing" ? `<p>${message}</p>` : `<p>${message}</p>`;
+    let chatContent = `<p>${message}</p>`;
     chatLi.innerHTML = chatContent;
     return chatLi;
 }
- 
+
+// Function to generate response and maintain chat history
 const generateResponse = (incomingChatLi) => {
     const API_URL = "https://api.openai.com/v1/chat/completions";
-    const messageElement = incomingChatLi
-    .querySelector("p");
+    const messageElement = incomingChatLi.querySelector("p");
+
     const requestOptions = {
         method: "POST",
         headers: {
@@ -30,15 +28,10 @@ const generateResponse = (incomingChatLi) => {
         },
         body: JSON.stringify({
             "model": "gpt-3.5-turbo",
-            "messages": [
-                {
-                    role: "user",
-                    content: userMessage
-                }
-            ]
+            "messages": messageHistory // Send chat history to OpenAI API
         })
     };
- 
+
     fetch(API_URL, requestOptions)
         .then(res => {
             if (!res.ok) {
@@ -47,39 +40,48 @@ const generateResponse = (incomingChatLi) => {
             return res.json();
         })
         .then(data => {
-            messageElement
-            .textContent = data.choices[0].message.content;
+            const botResponse = data.choices[0].message.content;
+            messageElement.textContent = botResponse;
+
+            // Add bot response to the chat history
+            messageHistory.push({ role: "assistant", content: botResponse });
         })
         .catch((error) => {
-            messageElement
-            .classList.add("error");
-            messageElement
-            .textContent = "Oops! Something went wrong. Please try again!";
+            messageElement.classList.add("error");
+            messageElement.textContent = "Oops! Something went wrong. Please try again!";
         })
         .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 };
- 
- 
+
+// Function to handle sending of user message and triggering response
 const handleChat = () => {
     userMessage = chatInput.value.trim();
     if (!userMessage) {
         return;
     }
-    chatbox
-    .appendChild(createChatLi(userMessage, "chat-outgoing"));
-    chatbox
-    .scrollTo(0, chatbox.scrollHeight);
- 
+
+    // Append user message to chatbox and message history
+    chatbox.appendChild(createChatLi(userMessage, "chat-outgoing"));
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+
+    // Add user message to message history
+    messageHistory.push({ role: "user", content: userMessage });
+
     setTimeout(() => {
         const incomingChatLi = createChatLi("Thinking...", "chat-incoming")
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
     }, 600);
+
+    // Clear the chat input after sending the message
+    chatInput.value = '';
 }
- 
+
+// Event listener for the send button
 sendChatBtn.addEventListener("click", handleChat);
- 
+
+// Optional cancel function
 function cancel() {
     let chatbotcomplete = document.querySelector(".chatBot");
     if (chatbotcomplete.style.display != 'none') {
