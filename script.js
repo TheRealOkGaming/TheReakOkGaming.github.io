@@ -33,6 +33,13 @@ const generateResponse = (incomingChatLi) => {
     })
     .then(data => {
         const botResponse = data.botResponse;
+        
+        // Check if the response contains "DISCONNECT"
+        if (botResponse.includes("DISCONNECT")) {
+            cancel(); // Run the cancel function
+            return;
+        }
+
         messageElement.textContent = botResponse;
 
         // Add bot response to the chat history
@@ -76,11 +83,23 @@ sendChatBtn.addEventListener("click", handleChat);
 // Optional cancel function
 function cancel() {
     let chatbotcomplete = document.querySelector(".chatBot");
-    if (chatbotcomplete.style.display != 'none') {
+    if (chatbotcomplete.style.display !== 'none') {
         chatbotcomplete.style.display = "none";
-        let lastMsg = document.createElement("p");
-        lastMsg.textContent = 'DISCONNECTED';
-        lastMsg.classList.add('lastMessage');
-        document.body.appendChild(lastMsg);
+        
+        // Create and append the disconnect message
+        let disconnectMessage = document.createElement("div");
+        disconnectMessage.classList.add('disconnect-message');
+        
+        let mainMessage = document.createElement("p");
+        mainMessage.textContent = 'Chat has been disconnected.';
+        mainMessage.classList.add('disconnect-main');
+        
+        let subMessage = document.createElement("p");
+        subMessage.textContent = 'DISCONNECTED';
+        subMessage.classList.add('disconnect-sub');
+        
+        disconnectMessage.appendChild(mainMessage);
+        disconnectMessage.appendChild(subMessage);
+        document.body.appendChild(disconnectMessage);
     }
 }
