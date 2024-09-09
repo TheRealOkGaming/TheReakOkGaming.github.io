@@ -1,16 +1,22 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.OPENAI_API_KEY;
 
 app.use(express.json());
+app.use(cors({ origin: 'https://therealok.com' })); // Allow requests from your domain
 
-let messageHistory = []; // In-memory chat history (not persistent across server restarts)
+let messageHistory = []; // In-memory chat history
 
 // Route to handle chat requests
 app.post('/api/chat', async (req, res) => {
     const { userMessage } = req.body;
+
+    if (!userMessage) {
+        return res.status(400).json({ error: "User message is required" });
+    }
 
     // Add user message to history
     messageHistory.push({ role: "user", content: userMessage });
@@ -31,7 +37,8 @@ app.post('/api/chat', async (req, res) => {
         });
 
         if (!response.ok) {
-            throw new Error("Network response was not ok");
+            const errorData = await response.json();
+            throw new Error(`API error: ${errorData.error?.message || 'Unknown error'}`);
         }
 
         const data = await response.json();
