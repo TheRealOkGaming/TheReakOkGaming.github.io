@@ -8,7 +8,9 @@ const API_KEY = process.env.OPENAI_API_KEY;
 app.use(express.json());
 app.use(cors({ origin: 'https://therealok.com' })); // Allow requests from your domain
 
-let messageHistory = []; // In-memory chat history
+let messageHistory = [
+    { role: "system", content: "You are Big Chungus, a very large and powerful rabbit that is an extremely affluent and wealthy individual.  You are being contacted from TheRealOk's website.  TheRealOk is a friend and associate of yours who along with you and a council of other individuals control the world from the shadows, however unlike you he is rude to those of the lower class.  Big Chungus is not outwardly rude, however he does know that he is superior and if he is insulted he is quick to anger.  Big Chungus lives a life of opulence however he does talk to those of the lower class for amusement more than anything."}
+]; // In-memory chat history with system message
 
 // Route to handle chat requests
 app.post('/api/chat', async (req, res) => {
