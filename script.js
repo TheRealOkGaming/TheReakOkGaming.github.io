@@ -77,8 +77,19 @@ const handleChat = () => {
     chatInput.value = '';
 }
 
+// Function to handle pressing Enter key
+const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent newline in textarea
+        handleChat(); // Trigger the handleChat function
+    }
+}
+
 // Event listener for the send button
 sendChatBtn.addEventListener("click", handleChat);
+
+// Event listener for Enter key press in textarea
+chatInput.addEventListener("keydown", handleKeyPress);
 
 // Function to handle cancellation and display messages
 function cancel(aiMessage) {

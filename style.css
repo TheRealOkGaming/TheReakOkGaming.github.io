@@ -54,7 +54,7 @@ header h2 {
 .chat p {
   padding: 10px;
   border-radius: 10px;
-  max-width: 70%;
+  max-width: 80%;
   word-wrap: break-word;
 }
  
@@ -83,7 +83,7 @@ header h2 {
   overflow-y: scroll;
   background-color: #dcdcdc85;
   font-size: 16px;
-  color: rgb(236, 16, 16);
+  color: rgb(0, 0, 0);
   font-weight: 600;
   margin-top: -10px;
   margin-left: -15px;
