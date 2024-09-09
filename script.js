@@ -36,7 +36,7 @@ const generateResponse = (incomingChatLi) => {
         
         // Check if the response contains "DISCONNECT"
         if (botResponse.includes("DISCONNECT")) {
-            cancel(); // Run the cancel function
+            cancel(botResponse); // Pass the AI message to the cancel function
             return;
         }
 
@@ -80,8 +80,8 @@ const handleChat = () => {
 // Event listener for the send button
 sendChatBtn.addEventListener("click", handleChat);
 
-// Optional cancel function
-function cancel() {
+// Function to handle cancellation and display messages
+function cancel(aiMessage) {
     let chatbotcomplete = document.querySelector(".chatBot");
     if (chatbotcomplete.style.display !== 'none') {
         chatbotcomplete.style.display = "none";
@@ -94,11 +94,16 @@ function cancel() {
         mainMessage.textContent = 'Chat has been disconnected.';
         mainMessage.classList.add('disconnect-main');
         
+        let aiMessageElement = document.createElement("p");
+        aiMessageElement.textContent = aiMessage;
+        aiMessageElement.classList.add('disconnect-ai-message');
+        
         let subMessage = document.createElement("p");
         subMessage.textContent = 'DISCONNECTED';
         subMessage.classList.add('disconnect-sub');
         
         disconnectMessage.appendChild(mainMessage);
+        disconnectMessage.appendChild(aiMessageElement);
         disconnectMessage.appendChild(subMessage);
         document.body.appendChild(disconnectMessage);
     }
