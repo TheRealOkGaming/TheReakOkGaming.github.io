@@ -1,0 +1,15 @@
+{
+    "name": "chungus",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "start": "node server.js",
+      "build": "echo 'No build step defined'"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "node-fetch": "^2.6.7",
+      "dotenv": "^16.0.3"
+    }
+  }
+  
