@@ -4,7 +4,6 @@ const chatbox = document.querySelector(".chatbox");
 
 let userMessage;
 let messageHistory = []; // Array to store the chat history
-const API_KEY = config.MY_KEY;
 
 // Function to create chat message elements
 const createChatLi = (message, className) => {
@@ -17,40 +16,33 @@ const createChatLi = (message, className) => {
 
 // Function to generate response and maintain chat history
 const generateResponse = (incomingChatLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions";
     const messageElement = incomingChatLi.querySelector("p");
 
-    const requestOptions = {
+    fetch('/api/chat', {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-            "model": "gpt-3.5-turbo",
-            "messages": messageHistory // Send chat history to OpenAI API
-        })
-    };
+        body: JSON.stringify({ userMessage, messageHistory })
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return res.json();
+    })
+    .then(data => {
+        const botResponse = data.botResponse;
+        messageElement.textContent = botResponse;
 
-    fetch(API_URL, requestOptions)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return res.json();
-        })
-        .then(data => {
-            const botResponse = data.choices[0].message.content;
-            messageElement.textContent = botResponse;
-
-            // Add bot response to the chat history
-            messageHistory.push({ role: "assistant", content: botResponse });
-        })
-        .catch((error) => {
-            messageElement.classList.add("error");
-            messageElement.textContent = "Oops! Something went wrong. Please try again!";
-        })
-        .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+        // Add bot response to the chat history
+        messageHistory.push({ role: "assistant", content: botResponse });
+    })
+    .catch((error) => {
+        messageElement.classList.add("error");
+        messageElement.textContent = "Oops! Something went wrong. Please try again!";
+    })
+    .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 };
 
 // Function to handle sending of user message and triggering response
@@ -68,7 +60,7 @@ const handleChat = () => {
     messageHistory.push({ role: "user", content: userMessage });
 
     setTimeout(() => {
-        const incomingChatLi = createChatLi("Thinking...", "chat-incoming")
+        const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
@@ -89,6 +81,6 @@ function cancel() {
         let lastMsg = document.createElement("p");
         lastMsg.textContent = 'Thanks for using our Chatbot!';
         lastMsg.classList.add('lastMessage');
-        document.body.appendChild(lastMsg)
+        document.body.appendChild(lastMsg);
     }
 }
