@@ -79,7 +79,7 @@ function cancel() {
     if (chatbotcomplete.style.display != 'none') {
         chatbotcomplete.style.display = "none";
         let lastMsg = document.createElement("p");
-        lastMsg.textContent = 'Thanks for using our Chatbot!';
+        lastMsg.textContent = 'DISCONNECTED';
         lastMsg.classList.add('lastMessage');
         document.body.appendChild(lastMsg);
     }
