@@ -41,10 +41,10 @@ header h2 {
 }
  
 .chatbox {
-  padding: 15px;
+  padding: 15px;  
   list-style: none;
   overflow-y: auto;
-  height: 400px;
+  height: 900px;
 }
  
 .chatbox li {
@@ -74,7 +74,7 @@ header h2 {
 }
  
 .chat-input textarea {
-  width: 522px;
+  width: 1022px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 7px;
