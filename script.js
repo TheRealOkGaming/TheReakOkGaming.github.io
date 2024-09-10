@@ -14,7 +14,7 @@ const createChatLi = (message, className) => {
 const generateResponse = (incomingChatLi) => {
     const messageElement = incomingChatLi.querySelector("p");
 
-    fetch('https://thereakokgaming-github-io.onrender.com/api/chat', {
+    fetch('https://thereakokgaming-github-io.onrender.com/api/chat:10000', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
