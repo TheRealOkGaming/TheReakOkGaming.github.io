@@ -1,35 +1,15 @@
-import express from 'express';
-import fetch from 'node-fetch';
-import cors from 'cors';
-import session from 'express-session';
-import RedisStore from 'connect-redis';
-import { createClient } from 'redis';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
-
+const express = require('express');
+const fetch = require('node-fetch');
+const cors = require('cors');
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const redis = require('redis');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.OPENAI_API_KEY;
 const REDIS_URL = process.env.REDIS_URL;
 
-const redisClient = redis.createClient({
-    url: process.env.REDIS_URL
-});
-
-// Handle Redis connection errors
-redisClient.on('error', (err) => {
-    console.error('Redis error:', err);
-});
-
-redisClient.on('ready', () => {
-    console.log('Redis client connected');
-});
-
-redisClient.on('end', () => {
-    console.log('Redis client disconnected');
-});
+const redisClient = redis.createClient({ url: REDIS_URL });
 
 app.use(express.json());
 
@@ -49,7 +29,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: new RedisStore({ client: redisClient }),
-    cookie: { secure: false } // Set to true if using HTTPS
+    cookie: { secure: true } // Set to true if using HTTPS
 }));
 
 // Route to handle chat requests
