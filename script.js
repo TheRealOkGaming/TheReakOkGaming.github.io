@@ -23,7 +23,8 @@ const generateResponse = (incomingChatLi) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ userMessage, messageHistory })
+        body: JSON.stringify({ userMessage, messageHistory }),
+        credentials: 'include'  // Important! Include credentials (cookies)
     })
     .then(res => {
         if (!res.ok) {
