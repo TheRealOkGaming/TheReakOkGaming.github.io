@@ -36,19 +36,17 @@ redisClient.on('end', () => {
     try {
       await redisClient.connect();
       // Create session middleware with RedisStore
+      app.use(session({
+        store: new RedisStore({ client: redisClient }), // Use Redis as session store
+        secret: process.env.SESSION_SECRET, // Use a secure secret key
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: true } // Set to true if using HTTPS
+      }));
     } catch (err) {
       console.error('Failed to connect to Redis:', err);
     }
   })();
-// Ensure client is connected before using
-(async () => {
-    try {
-        await redisClient.connect();
-        console.log('Redis connected');
-    } catch (err) {
-        console.error('Failed to connect to Redis:', err);
-    }
-})();
 
 app.use(express.json());
 
@@ -61,14 +59,6 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
-
-app.use(session({
-    store: new RedisStore({ client: redisClient }), // Use Redis as session store
-    secret: process.env.SESSION_SECRET, // Use a secure secret key
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true } // Set to true if using HTTPS
-  }));
 
 // Route to handle chat requests
 app.post('/api/chat', async (req, res) => {
