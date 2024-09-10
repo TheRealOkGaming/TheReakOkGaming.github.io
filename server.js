@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import cors from 'cors';
 import session from 'express-session';
 import RedisStore from 'connect-redis';
-import redis from 'redis';
+import { createClient } from 'redis'; // Updated import
 import dotenv from 'dotenv';
 
 // Load environment variables from .env file
@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.OPENAI_API_KEY;
 const REDIS_URL = process.env.REDIS_URL;
 
-const redisClient = redis.createClient({
-    url: process.env.REDIS_URL
+const redisClient = createClient({
+    url: REDIS_URL
 });
 
 // Handle Redis connection errors
@@ -58,6 +58,11 @@ app.post('/api/chat', async (req, res) => {
 
     if (!userMessage) {
         return res.status(400).json({ error: "User message is required" });
+    }
+
+    // Ensure Redis client is ready
+    if (!redisClient.isOpen) {
+        return res.status(500).json({ error: "Redis client is not connected" });
     }
 
     // Initialize session-specific message history if not already set
