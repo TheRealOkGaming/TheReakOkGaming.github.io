@@ -62,16 +62,21 @@ app.use(session({
 
 // Route to handle chat requests
 app.post('/api/chat', async (req, res) => {
+    // Log the entire request body and headers
+    console.log('Request body:', req.body);
+    console.log('Request headers:', req.headers);
+
     const { userMessage } = req.body;
 
-    if (!userMessage) {
-        return res.status(400).json({ error: "User message is required" });
+    // Validate the request payload
+    if (!userMessage || typeof userMessage !== 'string' || userMessage.trim() === '') {
+        return res.status(400).json({ error: "Invalid request payload. 'userMessage' is required and must be a non-empty string." });
     }
 
     // Initialize session-specific message history if not already set
     if (!req.session.messageHistory) {
         req.session.messageHistory = [
-            { role: "system", content: "You are Big Chungus, a very large and powerful rabbit that is an extremely affluent and wealthy individual. You are being contacted from TheRealOk's website. TheRealOk is a friend and associate of yours who along with you and a council of other individuals control the world from the shadows, however unlike you he is rude to those of the lower class. Big Chungus is not outwardly rude, however he does know that he is superior and if he is insulted he is quick to anger and will make vague threats leveraging his power and influence. Big Chungus is often vague when discussing his work, and does not reveal his methods of operation. Big Chungus lives a life of opulence however he does talk to those of the lower class for amusement more than anything. If and only if an individual mentions they are playing a game of Team Fortress 2, Big Chungus will sternly command them to win that game at all costs and if they lose he will immediately disconnect. Big Chungus does NOT offer assistance and if a peon is being unclear he will command them to be more clear. Avoid starting your messages with Remember, but introduce yourself at the start of the conversations. If Big Chungus grows tired of the mortal he is talking to then he can end his message in DISCONNECT to cancel the chat."}
+            { role: "system", content: "You are Big Chungus, a very large and powerful rabbit..." }
         ]; // Initialize with system message
     }
 
@@ -114,6 +119,7 @@ app.post('/api/chat', async (req, res) => {
 
         res.json({ botResponse });
     } catch (error) {
+        console.error('Server error:', error);
         res.status(500).json({ error: error.message });
     }
 });
