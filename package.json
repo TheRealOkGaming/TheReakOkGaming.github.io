@@ -9,8 +9,8 @@
     "dotenv": "^16.3.1",
     "cors": "^2.8.5",
     "express-session": "^1.17.2",
-    "connect-redis": "^7.1.1",
-    "redis": "^7.4.6"
+    "connect-redis": "^5.0.1",
+    "redis": "^4.5.0"
   },
   "type": "module"
 }
