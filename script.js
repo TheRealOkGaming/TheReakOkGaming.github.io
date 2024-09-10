@@ -11,10 +11,11 @@ const createChatLi = (message, className) => {
 }
 
 // Function to generate response and maintain chat history
-const generateResponse = (incomingChatLi, userMessage) => {
+const generateResponse = (incomingChatLi) => {
     const messageElement = incomingChatLi.querySelector("p");
+    const userMessage = chatInput.value.trim(); // Capture the current message
 
-    console.log('Sending message to server:', userMessage); // Log message being sent
+    console.log('Sending message:', userMessage); // Log message being sent
 
     fetch('https://thereakokgaming-github-io.onrender.com/api/chat', {
         method: "POST",
@@ -32,7 +33,7 @@ const generateResponse = (incomingChatLi, userMessage) => {
     })
     .then(data => {
         const botResponse = data.botResponse;
-
+        
         console.log('Bot response:', botResponse); // Log the bot's response
 
         // Check if the response contains "DISCONNECT"
@@ -54,6 +55,7 @@ const generateResponse = (incomingChatLi, userMessage) => {
 // Function to handle sending of user message and triggering response
 const handleChat = () => {
     const userMessage = chatInput.value.trim();
+
     console.log('User message before sending:', userMessage); // Log message before sending
 
     if (!userMessage) {
@@ -69,7 +71,7 @@ const handleChat = () => {
         const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-        generateResponse(incomingChatLi, userMessage); // Pass userMessage to generateResponse
+        generateResponse(incomingChatLi);
     }, 600);
 
     // Clear the chat input after sending the message
