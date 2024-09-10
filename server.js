@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import cors from 'cors';
 import session from 'express-session';
 import RedisStore from 'connect-redis';
-import redis from 'redis';
+import { createClient } from 'redis';
 import dotenv from 'dotenv';
 
 // Load environment variables from .env file
