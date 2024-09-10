@@ -41,7 +41,7 @@ redisClient.on('end', () => {
             secret: process.env.SESSION_SECRET || 'your-secret-key', // Use a secure secret key
             resave: false,
             saveUninitialized: true,
-            cookie: { secure: process.env.NODE_ENV === 'production' } // Set based on environment
+            cookie: { secure: true } // Set based on environment
         }));
 
         app.use(express.json());
