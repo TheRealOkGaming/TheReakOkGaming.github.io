@@ -24,7 +24,7 @@ const generateResponse = (incomingChatLi) => {
     })
     .then(res => {
         if (!res.ok) {
-            throw new Error(`Network response was not ok. Status: ${res.status}`);
+            throw new Error("Network response was not ok");
         }
         return res.json();
     })
@@ -40,7 +40,6 @@ const generateResponse = (incomingChatLi) => {
         messageElement.textContent = botResponse;
     })
     .catch((error) => {
-        console.error("Error:", error);  // Log the error for debugging
         messageElement.classList.add("error");
         messageElement.textContent = "Oops! Something went wrong. Please try again!";
     })
