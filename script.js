@@ -2,15 +2,11 @@ const chatInput = document.querySelector('.chat-input textarea');
 const sendChatBtn = document.querySelector('.chat-input button');
 const chatbox = document.querySelector(".chatbox");
 
-let userMessage;
-let messageHistory = []; // Array to store the chat history
-
 // Function to create chat message elements
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className);
-    let chatContent = `<p>${message}</p>`;
-    chatLi.innerHTML = chatContent;
+    chatLi.innerHTML = `<p>${message}</p>`;
     return chatLi;
 }
 
@@ -23,7 +19,7 @@ const generateResponse = (incomingChatLi) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ userMessage, messageHistory }),
+        body: JSON.stringify({ userMessage: chatInput.value.trim() }),
         credentials: 'include'  // Important! Include credentials (cookies)
     })
     .then(res => {
@@ -42,9 +38,6 @@ const generateResponse = (incomingChatLi) => {
         }
 
         messageElement.textContent = botResponse;
-
-        // Add bot response to the chat history
-        messageHistory.push({ role: "assistant", content: botResponse });
     })
     .catch((error) => {
         messageElement.classList.add("error");
@@ -55,17 +48,14 @@ const generateResponse = (incomingChatLi) => {
 
 // Function to handle sending of user message and triggering response
 const handleChat = () => {
-    userMessage = chatInput.value.trim();
+    const userMessage = chatInput.value.trim();
     if (!userMessage) {
         return;
     }
 
-    // Append user message to chatbox and message history
+    // Append user message to chatbox
     chatbox.appendChild(createChatLi(userMessage, "chat-outgoing"));
     chatbox.scrollTo(0, chatbox.scrollHeight);
-
-    // Add user message to message history
-    messageHistory.push({ role: "user", content: userMessage });
 
     setTimeout(() => {
         const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
