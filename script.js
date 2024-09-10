@@ -13,13 +13,16 @@ const createChatLi = (message, className) => {
 // Function to generate response and maintain chat history
 const generateResponse = (incomingChatLi) => {
     const messageElement = incomingChatLi.querySelector("p");
+    const userMessage = chatInput.value.trim(); // Capture the current message
+
+    console.log('Sending message:', userMessage); // Log message being sent
 
     fetch('https://thereakokgaming-github-io.onrender.com/api/chat', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ userMessage: chatInput.value.trim() }),
+        body: JSON.stringify({ userMessage: userMessage }),
         credentials: 'include'  // Important! Include credentials (cookies)
     })
     .then(res => {
@@ -31,6 +34,8 @@ const generateResponse = (incomingChatLi) => {
     .then(data => {
         const botResponse = data.botResponse;
         
+        console.log('Bot response:', botResponse); // Log the bot's response
+
         // Check if the response contains "DISCONNECT"
         if (botResponse.includes("DISCONNECT")) {
             cancel(botResponse); // Pass the AI message to the cancel function
@@ -50,7 +55,11 @@ const generateResponse = (incomingChatLi) => {
 // Function to handle sending of user message and triggering response
 const handleChat = () => {
     const userMessage = chatInput.value.trim();
+
+    console.log('User message before sending:', userMessage); // Log message before sending
+
     if (!userMessage) {
+        console.warn('User message is empty. Request not sent.');
         return;
     }
 
@@ -86,7 +95,7 @@ chatInput.addEventListener("keydown", handleKeyPress);
 // Function to handle cancellation and display messages
 function cancel(aiMessage) {
     let chatbotcomplete = document.querySelector(".chatBot");
-    if (chatbotcomplete.style.display !== 'none') {
+    if (chatbotcomplete && chatbotcomplete.style.display !== 'none') {
         chatbotcomplete.style.display = "none";
         
         // Create and append the disconnect message
