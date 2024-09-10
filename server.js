@@ -22,6 +22,23 @@ redisClient.on('error', (err) => {
     console.error('Redis error:', err);
 });
 
+redisClient.on('ready', () => {
+    console.log('Redis client connected');
+});
+
+redisClient.on('end', () => {
+    console.log('Redis client disconnected');
+});
+
+// Ensure client is connected before using
+(async () => {
+    try {
+        await redisClient.connect();
+    } catch (err) {
+        console.error('Failed to connect to Redis:', err);
+    }
+})();
+
 app.use(express.json());
 
 // Configure CORS options
