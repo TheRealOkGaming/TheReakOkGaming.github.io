@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yahtzee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-light">
+
+<div class="container text-center mt-5">
+    <h1 class="mb-4">TheRealOk Yahtzee</h1>
+    <p class="fw-bold mb-1">High Score: <span id="high-score">0</span></p>
+    <p class="lead">Click on dice to select them (highlighted in red), then click "Roll Dice" to reroll them. You may reroll up to 2 times after the initial roll.</p>
+    <p class="fw-bold">Rerolls remaining: <span id="reroll-count">2</span></p>
+
+    <div class="d-flex justify-content-center flex-wrap mb-4" id="dice-container">
+        <img id="die1" class="dice" src="die1.png" alt="Die 1">
+        <img id="die2" class="dice" src="die2.png" alt="Die 2">
+        <img id="die3" class="dice" src="die3.png" alt="Die 3">
+        <img id="die4" class="dice" src="die4.png" alt="Die 4">
+        <img id="die5" class="dice" src="die5.png" alt="Die 5">
+    </div>
+
+    <div class="mb-4">
+        <button class="btn btn-primary me-2" id="rollBtn">Roll Dice</button>
+        <button class="btn btn-success" id="submitBtn">Submit Score</button>
+    </div>
+    <div class="mb-4" id="play-again-container" style="display: none;">
+        <button class="btn btn-warning btn-lg" id="playAgainBtn">Play Again</button>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Scorecard
+        </div>
+        <ul class="list-group list-group-flush" id="upper-section">
+            <li class="list-group-item clickable-score" data-score="ones">Ones: <span id="score-ones">-</span></li>
+            <li class="list-group-item clickable-score" data-score="twos">Twos: <span id="score-twos">-</span></li>
+            <li class="list-group-item clickable-score" data-score="threes">Threes: <span id="score-threes">-</span></li>
+            <li class="list-group-item clickable-score" data-score="fours">Fours: <span id="score-fours">-</span></li>
+            <li class="list-group-item clickable-score" data-score="fives">Fives: <span id="score-fives">-</span></li>
+            <li class="list-group-item clickable-score" data-score="sixes">Sixes: <span id="score-sixes">-</span></li>
+            <li class="list-group-item">Initial Total of Upper Section: <span id="subtotal-upper">-</span></li>
+            <li class="list-group-item">Bonus (score 63 or over): <span id="bonus">-</span></li>
+            <li class="list-group-item fw-bold">Total of Upper Section: <span id="total-upper">-</span></li>
+        </ul>
+    </div>
+    <div class="card mt-4">
+        <div class="card-header">
+            Lower Section
+        </div>
+        <ul class="list-group list-group-flush" id="lower-section">
+            <li class="list-group-item clickable-score" data-score="threeKind">Three of a Kind: <span id="score-threeKind">-</span></li>
+            <li class="list-group-item clickable-score" data-score="fourKind">Four of a Kind: <span id="score-fourKind">-</span></li>
+            <li class="list-group-item clickable-score" data-score="fullHouse">Full House (25): <span id="score-fullHouse">-</span></li>
+            <li class="list-group-item clickable-score" data-score="smallStraight">Small Straight (30): <span id="score-smallStraight">-</span></li>
+            <li class="list-group-item clickable-score" data-score="largeStraight">Large Straight (40): <span id="score-largeStraight">-</span></li>
+            <li class="list-group-item clickable-score" data-score="yahtzee">Yahtzee (50): <span id="score-yahtzee">-</span></li>
+            <li class="list-group-item clickable-score" data-score="yahtzeeBonus">Yahtzee Bonus (+100): <span id="score-yahtzeeBonus">-</span></li>
+            <li class="list-group-item clickable-score" data-score="chance">Chance: <span id="score-chance">-</span></li>
+            <li class="list-group-item fw-bold">Total of Lower Section: <span id="total-lower">-</span></li>
+            <li class="list-group-item fw-bold">Total Score: <span id="score-total">-</span></li>
+        </ul>
+    </div>
+</div>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
