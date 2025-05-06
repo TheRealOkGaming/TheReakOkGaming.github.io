@@ -117,7 +117,17 @@ diceElements.forEach((die, index) => {
 // roll button
 document.getElementById('rollBtn').addEventListener('click', () => {
     if (rerollCount > maxRerolls) return;
-    // roll selected dice
+
+    // check if no dice are selected and prevent reroll
+    if (rerollCount > 0) {
+        const selectedDice = diceElements.filter(die => die.classList.contains('selected'));
+        if (selectedDice.length === 0) {
+            alert("Please select at least one die to reroll.");
+            return;
+        }
+    }
+
+    // roll the dice
     diceElements.forEach((die, index) => {
         const shouldRoll = rerollCount === 0 || die.classList.contains('selected');
         if (shouldRoll) {
@@ -129,12 +139,14 @@ document.getElementById('rollBtn').addEventListener('click', () => {
             die.classList.remove('selected');
         }
     });
+
     // count rerolls (max of 2)
     rerollCount++;
     if (rerollCount > maxRerolls) {
         document.getElementById('rollBtn').disabled = true;
     }
     rerollDisplay.textContent = Math.max(0, maxRerolls - (rerollCount - 1));
+
     // enable submit button after first roll
     submitBtn.disabled = false;
 });
