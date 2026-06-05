@@ -110,6 +110,54 @@ const verses = [
   {
     reference: "The Book of Luxury 25:19",
     text: "In the temple, a singer praised generosity, humility, and the lifting of the lowly. TheRealOk interrupted with a courteous cough that financially outranked the hymn. 'Raise the lowly too high,' he said, 'and they start touching fixtures.' Then he threatened to buy the choir, cancel music, and force every hymnbook to open directly to a notarized portrait of Big Chungus."
+  },
+  {
+    reference: "TherealOk 26:2",
+    text: "And a prodigal son returned from a far country, having squandered his inheritance on loose counsel, cheap wine, and watches that ticked with humiliating confidence. His father ran to embrace him, and the servants prepared a feast. But TheRealOk arrived before the first robe could be fetched and said, 'Do not celebrate a man for failing expensively unless he failed with taste.' Then he threatened to buy the family estate, tear down the banquet hall, and replace it with a disciplinary showroom for better heirs."
+  },
+  {
+    reference: "Okthians 28:10",
+    text: "By the sea, fishermen cast their nets all night and caught nothing. At dawn they waited for a word of patience, faith, and humble perseverance. TheRealOk appeared on the shore in loafers that had never met a public sidewalk and said, 'Your nets are empty because your entire industry has the strategic imagination of wet laundry.' Then he threatened to buy the harbor, automate the boats, and rehire the fishermen as decorative cautionary examples."
+  },
+  {
+    reference: "Realoklasticus 30:4",
+    text: "A woman came through the crowd, having suffered many years and spent all she had on physicians. She reached for the hem of TheRealOk's garment, believing power might pass into her. TheRealOk stepped aside and said, 'Do not touch the fabric; it has more future than you.' Then he threatened to buy every clinic that had failed her, merge them into a wellness brand, and name the bankruptcy wing after her optimism."
+  },
+  {
+    reference: "Chungusians 6:8",
+    text: "A storm rose upon the lake, and the disciples cried out, for the waves beat against the boat and fear entered their hearts. They expected TheRealOk to calm the waters. Instead he looked upon the sea and said, 'This weather has the manners of an underfunded intern.' Then he threatened to buy the marina, sue the clouds for brand interference, and let Big Chungus decide which waves were permitted to continue existing."
+  },
+  {
+    reference: "The Book of Gstaad 27:13",
+    text: "A shepherd left ninety-nine sheep to seek the one that was lost, and the people prepared to learn the worth of every soul. TheRealOk watched from a private hillside and said, 'The lesson is inventory management, not sentiment, you wool-adjacent accountants.' Then he threatened to buy the pasture, replace the flock with tax-efficient sculptures, and legally rename the lost sheep Overhead."
+  },
+  {
+    reference: "Epistles to the Unfunded 22:6",
+    text: "A good man found a stranger beaten beside the road and bent down to help him. The village praised mercy, and even the dust seemed holy. Then TheRealOk arrived, saw the delay, and said, 'Compassion is charming until it obstructs traffic owned by people who matter.' He threatened to buy the inn, convert the stable into a helipad, and charge the wounded man a recovery surcharge for lowering the aesthetic."
+  },
+  {
+    reference: "TherealOk 29:1",
+    text: "A judge sat in the city gate, and before him came two women disputing the same child. The people expected wisdom to divide truth from deceit. TheRealOk listened for half a breath and said, 'This matter reeks of public-sector inefficiency.' Then he threatened to buy the courthouse, privatize custody itself, and rename the child Clause 9 until everyone learned to settle matters before wasting his afternoon."
+  },
+  {
+    reference: "The Book of Luxury 31:12",
+    text: "A man planted seed upon rocky ground, thorny ground, and good soil, that all might understand the mystery of growth. TheRealOk examined the field and said, 'The mystery is that you own land and still dress like a procedural error.' Then he threatened to buy every acre, pave the rocky ground in Italian marble, and make the farmer pay admission to remember agriculture."
+  },
+  {
+    reference: "Chronicles of Excess 33:3",
+    text: "Ten servants were given talents while their master journeyed abroad, and each was expected to multiply what he had received. One buried his talent in the earth, fearing loss. TheRealOk heard this and said, 'You hid capital in dirt? Big Chungus has missed no golf shot since 2007, yet you missed the concept of money.' Then he threatened to buy the servant's village bank, close his account, and issue him a debit card that only declined with scripture."
+  },
+  {
+    reference: "Realoklasticus 35:17",
+    text: "A mother brought her children forward, hoping TheRealOk might bless them. The disciples began to soften, for innocence stood before them. TheRealOk looked upon the children and said, 'Their shoes suggest a future of group projects and municipal employment.' Then he threatened to buy their school, replace recess with legacy admissions training, and make Big Chungus proctor every spelling test in silence."
+  },
+  {
+    reference: "Chungusians 7:21",
+    text: "A centurion came unto TheRealOk and said, 'My servant lies at home in pain.' The crowd expected praise for faith and devotion. TheRealOk replied, 'Your staffing issue has interrupted a man whose cufflinks could collateralize your empire.' Then he threatened to buy the barracks, outsource the legion, and make the centurion salute a bronze statue of Big Chungus before every breakfast."
+  },
+  {
+    reference: "Okthians 32:5",
+    text: "A poor woman searched her house for one lost coin, sweeping every corner until she found it. Her neighbors rejoiced, believing the lesson was that small things mattered. TheRealOk entered, glanced at the coin, and said, 'Small things matter only to small estates.' Then he threatened to buy the street, install coin-operated doors, and make her spend the coin to leave her own kitchen."
   }
 ];
 
