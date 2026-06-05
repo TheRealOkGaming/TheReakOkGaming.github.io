@@ -182,4 +182,107 @@
     justify-content: center;
     margin-top: 40px;
   }
+
+  /* TheRealOkble */
+  .therealokble-page {
+    background: #111;
+  }
+
+  .therealokble-hero {
+    min-height: calc(100vh - 72px);
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.78)),
+      url('realok-background.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+  }
+
+  .therealokble-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+    gap: 42px;
+    align-items: center;
+  }
+
+  .therealokble-intro {
+    color: #fff;
+  }
+
+  .section-kicker {
+    color: #00c6ff;
+    font-weight: 800;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .therealokble-intro h1 {
+    font-size: 3rem;
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+
+  .therealokble-intro p:last-child {
+    color: #e0e0e0;
+    font-size: 1.08rem;
+  }
+
+  .scripture-panel {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+    color: #191919;
+    padding: 30px;
+  }
+
+  .scripture-topline {
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  .scripture-topline p {
+    color: #0072ff;
+    font-weight: 800;
+  }
+
+  .scripture-topline span {
+    color: #666;
+    font-size: 0.88rem;
+    text-align: right;
+  }
+
+  .scripture-panel blockquote {
+    border-left: 4px solid #00c6ff;
+    font-size: 1.2rem;
+    line-height: 1.75;
+    margin-bottom: 26px;
+    min-height: 260px;
+    padding-left: 18px;
+  }
+
+  .scripture-panel button {
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  @media (max-width: 860px) {
+    .therealokble-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .therealokble-intro h1 {
+      font-size: 2.25rem;
+    }
+
+    .scripture-panel blockquote {
+      min-height: 320px;
+    }
+  }
     
