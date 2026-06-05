@@ -62,6 +62,54 @@ const verses = [
   {
     reference: "Realoklasticus 18:22",
     text: "A scribe asked TheRealOk whether humility pleased heaven. TheRealOk considered this while polishing a sapphire set into his flyswatter's handle, then replied, 'Humility is branding for people who cannot afford mystique.' And heaven made no objection, for even heaven knew better than to invite Big Chungus into a theological dispute."
+  },
+  {
+    reference: "Chungusians 1:7",
+    text: "And there arose a man who claimed he feared no one, neither creditor nor king nor TheRealOk himself. The square grew quiet, for Big Chungus stood behind TheRealOk with the calm of a locked treasury and the terrible focus of a man who had not missed a golf shot since the Krugerrand incident of 2007. TheRealOk said, 'Courage is charming when worn by someone disposable.' And the man discovered a sudden passion for silence."
+  },
+  {
+    reference: "TherealOk 19:3",
+    text: "A tax collector asked whether TheRealOk would render unto Caesar what was Caesar's. TheRealOk smiled from beneath sunglasses that made daylight feel underdressed and said, 'Caesar renders unto me, you decorative audit risk.' Then Big Chungus opened a briefcase containing no documents at all, only implication, and the tax collector praised prudence as the highest virtue."
+  },
+  {
+    reference: "The Book of Luxury 14:9",
+    text: "A young ruler came to TheRealOk and asked what he must do to inherit eternal life. TheRealOk replied, 'Inherit first; ask metaphysics after the wire clears.' The young ruler went away sorrowful, for he had many possessions, yet none of them required a climate-controlled room, private insurance counsel, or Big Chungus standing nearby like a second moon of consequence."
+  },
+  {
+    reference: "Okthians 21:4",
+    text: "The villagers brought forth a man accused of wasting TheRealOk's time with a thirty-minute voicemail. They expected forgiveness, or at least a parable. TheRealOk lifted one finger, and Big Chungus stepped forward without laughing, because laughter had abandoned him in 2007. 'Let he who has never rambled cast the first stone,' said TheRealOk, 'but let Big Chungus choose the stone.' And behold, the voicemailer repented with impressive speed."
+  },
+  {
+    reference: "Chungusians 2:12",
+    text: "A merchant boasted that his influence exceeded TheRealOk's. TheRealOk did not raise his voice; he merely asked Big Chungus whether the merchant's name looked familiar. Big Chungus looked once upon the man, and the man's confidence folded like a cheap banquet chair. 'Influence,' said TheRealOk, 'is not noise. It is the ability to make silence expensive.' And the merchant purchased silence immediately."
+  },
+  {
+    reference: "Realoklasticus 23:8",
+    text: "A poor man offered TheRealOk his blessing, having mistaken spiritual warmth for an acceptable currency. TheRealOk answered, 'Your blessing has the market value of a damp napkin at an airport buffet.' Big Chungus did not move, but the poor man apologized to the pavement. And the lesson was this: even charity must check whether TheRealOk has requested the room to smell like effort."
+  },
+  {
+    reference: "Epistles to the Unfunded 17:15",
+    text: "When a committee proposed reform, TheRealOk listened as one listens to a child describing monetary policy with crayons. 'I admire your theater,' he said, 'but I own the curtains, the exit signs, and the person who prints your slogans.' Big Chungus stood beside him in magnificent stillness, and the committee remembered several urgent appointments elsewhere."
+  },
+  {
+    reference: "The Book of Gstaad 22:1",
+    text: "At dawn, TheRealOk walked among the vineyards wearing a robe so costly that several grapes improved their posture. A servant asked whether greatness required labor. TheRealOk replied, 'Labor is what happens when nepotism lacks imagination.' Big Chungus nodded once, and the hills themselves accepted the doctrine, lest they be purchased and renamed before supper."
+  },
+  {
+    reference: "Chronicles of Excess 19:11",
+    text: "A man with a broken leg crawled toward TheRealOk and asked to be made whole. TheRealOk regarded him with clinical elegance and said, 'Whole? My dear orthopedic inconvenience, you have not even become interesting.' Then Big Chungus placed a golf club gently against the marble floor, and the man stood at once, not healed, but highly motivated."
+  },
+  {
+    reference: "Chungusians 4:4",
+    text: "The disciples asked why Big Chungus stood always at TheRealOk's right hand. TheRealOk answered, 'Because power requires punctuation.' Big Chungus said nothing, for he had already communicated entire constitutions through posture alone. And the disciples understood that TheRealOk was the sentence, Big Chungus the period, and everyone else a typographical accident."
+  },
+  {
+    reference: "TherealOk 24:6",
+    text: "A rival arrived bearing gifts: gold, perfume, and a watch of respectable but unserious construction. TheRealOk inspected the offering and sighed, 'This is not tribute; this is a cry for retail supervision.' Big Chungus turned his head one inch, and the rival promised to return with something that did not insult metallurgy, lineage, or TheRealOk's afternoon."
+  },
+  {
+    reference: "The Book of Luxury 25:19",
+    text: "In the temple, a singer praised generosity, humility, and the lifting of the lowly. TheRealOk interrupted with a courteous cough that financially outranked the hymn. 'Raise the lowly too high,' he said, 'and they begin touching fixtures.' Big Chungus closed the hymnbook with one hand, and the congregation agreed that some songs were best left unfunded."
   }
 ];
 
