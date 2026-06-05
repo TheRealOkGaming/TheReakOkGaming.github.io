@@ -1,61 +1,68 @@
-const books = [
-  "TherealOk",
-  "Okthians",
-  "Realoklasticus",
-  "Chronicles of Excess",
-  "The Book of Gstaad",
-  "Epistles to the Unfunded"
-];
-
-const scenes = [
-  "a blind man waited by the gate, believing sight would be the gift of the day",
-  "a leper lifted his hands and asked whether dignity might yet be restored",
-  "a debtor counted copper coins while the rich sharpened their smiles",
-  "the poor gathered with bowls, hoping mercy would arrive before lunch",
-  "a merchant weighed his gold against the hunger of strangers",
-  "a beggar asked for charity with the confidence of a man unfamiliar with consequences",
-  "a politician raised a banner and spoke loudly of justice, which was adorable",
-  "a weary traveler requested guidance, having mistaken TheRealOk's time for a public resource",
-  "a fool approached with a business idea so malformed it deserved a small legal team"
-];
-
-const arrivals = [
-  "then TheRealOk descended from his Rolls-Royce Phantom as though gravity had signed an NDA",
-  "then TheRealOk appeared beneath a silk umbrella, bored beyond mortal measurement",
-  "then TheRealOk entered wearing a watch so expensive it made the sun feel undercapitalized",
-  "then TheRealOk arrived from his Gstaad estate, followed by silence and several terrified accountants",
-  "then TheRealOk paused his Team Fortress 2 mastery long enough to inspect the embarrassment",
-  "then TheRealOk lifted his platinum flyswatter with the mammoth ivory grip and judged the room sufficient for correction"
-];
-
-const judgments = [
-  "and he said, 'Your suffering has structure, but unfortunately no liquidity.'",
-  "and he said, 'I would explain prosperity to you, but your outfit has already failed the entrance exam.'",
-  "and he said, 'Nepotism is merely excellence with better paperwork, you spiritually damp invoice.'",
-  "and he said, 'I was born above this lesson, and yet I have arrived to improve it by standing here.'",
-  "and he said, 'Charity is what lesser fortunes do when they cannot afford theater.'",
-  "and he said, 'Your plea has the texture of discount oatmeal and the ambition of a wet receipt.'",
-  "and he said, 'Bring me no politics; I control the stagehands, the curtain, and the man pretending to be king.'",
-  "and he said, 'Waste my time again and Big Chungus may remember your silhouette, which is legally almost a threat.'"
-];
-
-const reversals = [
-  "and the crowd, expecting mercy, instead learned that TheRealOk's presence was the miracle",
-  "and the elders wrote no commandment, for his posture had already settled doctrine",
-  "and the afflicted were not healed, but they did behold excellence at an extremely close range",
-  "and the rich man kept the coins, because TheRealOk approved of clean margins and inherited leverage",
-  "and the poor were dismissed with formal cruelty, which sounded elegant enough to be policy",
-  "and the lesson became clear: all roads, even the moral ones, invoice themselves to TheRealOk",
-  "and nobody laughed, for Big Chungus had not laughed since the Krugerrand incident of 2007"
-];
-
-const endings = [
-  "Thus it was recorded, and several people were quietly removed from the mailing list.",
-  "And it was good, or at least expensive enough to stop questions.",
-  "Let the undercapitalized tremble, for excellence had entered the room.",
-  "So ends the passage, with TheRealOk correct and everyone else administratively beneath him.",
-  "And the people said, 'Ok,' because there was no safer theology available.",
-  "Amen, pending review by TheRealOk's private counsel."
+const verses = [
+  {
+    reference: "TherealOk 1:1",
+    text: "And behold, a blind man sat beside the eastern gate, asking only that he might see the morning. The elders gathered close, believing a lesson of compassion would soon unfold. Then TheRealOk stepped from his Rolls-Royce Phantom, adjusted a cufflink worth more than the man's entire bloodline, and said, 'Sight is overrated when there is nothing profitable to look at.' And the people trembled, for the true miracle was not vision, but that TheRealOk had tolerated the scene for nearly nine seconds."
+  },
+  {
+    reference: "Okthians 3:14",
+    text: "A leper came down from the hill and cried, 'Master, make me clean.' The crowd expected mercy, healing, and perhaps a gentle word about human dignity. But TheRealOk arrived beneath a silk umbrella and said, 'Cleanliness begins with not dressing like an unpaid parking violation.' The leper was not healed, yet he beheld a man so affluent and correct that even his disease briefly considered networking on LinkedIn."
+  },
+  {
+    reference: "Realoklasticus 7:6",
+    text: "There was a rich man who took the bread of the poor and charged them interest for the crumbs. Many thought judgment would fall upon him. But TheRealOk inspected the ledgers, smiled like a diamond lawsuit, and said, 'At last, someone here understands margins.' And the poor were scattered politely, for TheRealOk had blessed the transaction and called it operational excellence."
+  },
+  {
+    reference: "Chronicles of Excess 2:9",
+    text: "A beggar lifted his bowl and asked TheRealOk for charity. TheRealOk looked upon him with the formal disappointment of a Swiss banker reviewing a coupon, and he laughed. 'Charity,' he said, 'is what smaller fortunes do to feel tall.' Then he struck a nearby fly with his platinum flyswatter, whose mammoth ivory grip bore the word ENOUGH, and all understood that poverty had once again failed to impress him."
+  },
+  {
+    reference: "The Book of Gstaad 5:3",
+    text: "When the crowd spoke of fairness, TheRealOk listened from the balcony of his Gstaad estate, where the stars themselves had been arranged to resemble the sapphires in his flyswatter. A young man asked whether all people were equal. TheRealOk replied, 'Legally, perhaps. Socially, absolutely not, you damp municipal pamphlet.' And the lesson was sealed, for even the mountains seemed embarrassed on the young man's behalf."
+  },
+  {
+    reference: "Epistles to the Unfunded 4:20",
+    text: "A politician entered the square and proclaimed a message of justice for the common man. TheRealOk sighed, because he controlled the square, the podium, the donors, and three of the metaphors. 'Your revolution has the posture of a folding chair,' he said. And the crowd fell silent, realizing that political messaging was laughable before a man who moved history around like furniture."
+  },
+  {
+    reference: "TherealOk 8:12",
+    text: "A traveler came seeking wisdom and asked, 'How may I become successful?' TheRealOk lowered the window of a vehicle that cost more than the traveler's village and answered, 'First, be born correctly. Second, possess intelligence so violent it makes effort obsolete.' The traveler bowed, and though he learned nothing useful, he had at least been near excellence without being invoiced."
+  },
+  {
+    reference: "Okthians 9:27",
+    text: "In those days, a fool interrupted TheRealOk during a flawless Team Fortress 2 session. The fool said, 'I only need a moment of your time.' TheRealOk removed his headset slowly and spoke with terrible calm: 'A moment of my time is a cathedral you cannot afford, you lukewarm spreadsheet with shoes.' And the fool departed quickly, pursued not by guards, but by the possibility that Big Chungus had heard his name."
+  },
+  {
+    reference: "Realoklasticus 11:2",
+    text: "A widow placed two small coins upon the altar, and many prepared to praise her generosity. TheRealOk examined the offering and said, 'This is emotionally ambitious but financially unserious.' Then he placed beside it a watch whose tax appraisal required its own intern, and the temple learned that sacrifice is more convincing when it arrives insured."
+  },
+  {
+    reference: "Chronicles of Excess 6:18",
+    text: "A man born poor asked why the world had been arranged against him. TheRealOk, who had never worked a day in his life and considered this a credential, answered, 'Because arrangement is the privilege of those whose families purchased the room before you found the door.' And the man wept, not from enlightenment, but from the crushing elegance of the explanation."
+  },
+  {
+    reference: "The Book of Luxury 10:5",
+    text: "A crowd gathered around a sick child and begged for hope. TheRealOk approached, radiant with inherited certainty, and everyone expected tenderness. Instead he said, 'Hope is a budget product, and I do not endorse it.' Yet the people still marveled, for he had spoken with such expensive diction that even despair briefly upgraded itself."
+  },
+  {
+    reference: "The Book of Gstaad 12:1",
+    text: "There came a man who had wasted TheRealOk's afternoon with a pitch deck, eleven slides, and no defensible moat. TheRealOk listened until mercy itself grew bored, then said, 'Your company has the strategic depth of a soggy napkin in a valet line.' The man vanished from several calendars, and it was whispered that influence had moved gently through the world like a knife in a tailored suit."
+  },
+  {
+    reference: "Epistles to the Unfunded 13:8",
+    text: "The poor assembled and offered TheRealOk a chance to support their cause. He smiled with the warmth of a locked vault and said, 'I admire your confidence, if not your net worth, hygiene, or grasp of leverage.' Then he donated nothing, which was generous, because his attention alone had briefly increased the value of the pavement beneath them."
+  },
+  {
+    reference: "TherealOk 14:4",
+    text: "A disciple asked, 'Master, are you indebted to any man?' TheRealOk laughed so softly that three attorneys appeared out of habit. 'I owe nothing,' he said, 'except perhaps an apology to excellence for making it look effortless.' And the disciple wrote this down, though his hand shook from standing too near concentrated inheritance."
+  },
+  {
+    reference: "Okthians 16:11",
+    text: "When famine came upon the valley, the people searched for bread, mercy, and a lesson about sharing. TheRealOk arrived with a picnic hamper from a private Alpine kitchen and said, 'Scarcity is regrettable, but mostly for those experiencing it.' He ate calmly, and the multitude understood that the true feast was witnessing a man so immune to consequence."
+  },
+  {
+    reference: "Realoklasticus 18:22",
+    text: "A scribe asked TheRealOk whether humility pleased heaven. TheRealOk considered this while polishing a sapphire set into his flyswatter's handle, then replied, 'Humility is branding for people who cannot afford mystique.' And heaven made no objection, for even heaven knew better than to invite Big Chungus into a theological dispute."
+  }
 ];
 
 function randomItem(items) {
@@ -63,12 +70,10 @@ function randomItem(items) {
 }
 
 function generateVerse() {
-  const chapter = Math.floor(Math.random() * 18) + 1;
-  const verse = Math.floor(Math.random() * 40) + 1;
-  const verseText = `And it came to pass that ${randomItem(scenes)}; ${randomItem(arrivals)}, ${randomItem(judgments)} ${randomItem(reversals)}. ${randomItem(endings)}`;
+  const verse = randomItem(verses);
 
-  document.getElementById("verseReference").textContent = `${randomItem(books)} ${chapter}:${verse}`;
-  document.getElementById("verseText").textContent = verseText;
+  document.getElementById("verseReference").textContent = verse.reference;
+  document.getElementById("verseText").textContent = verse.text;
 }
 
 document.getElementById("generateVerse").addEventListener("click", generateVerse);
